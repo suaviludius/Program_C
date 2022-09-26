@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <conio.h> // библиотека обслуживающая '_getch()'
+// определение символических констант
+#define YES 1 
+#define NO 0
+
+int main(void)
+{
+	int c; // текущий символ из потока
+	int gl; // гласный символ
+	int sg; // согласный символ
+	int flag; // признак слова
+	int cnt; // счётчик
+	int word; // определитель слова
+
+    // начальные присваивания (инициализация) 
+	gl = 0;
+	sg = 0;
+	cnt = 0;
+	flag = NO;
+	word = YES;
+	// цикл чтения символов из потока, связанного с 
+	// клавиатурой
+	while ((c = getchar()) != EOF)
+	{
+		
+		if (c == ' ' || c == '.' || c == ',' || c == '\n' || c == '\0' || c == '\t')
+		{
+			// найден разделитель и выполняется условие слова
+			if ((flag == YES) && (word == YES))
+			{
+				// гласных меньше, чем согласных
+				if (gl > sg)
+				{
+					cnt++;
+				}
+			}
+			flag = NO;
+			gl = 0;
+			sg = 0;
+			word = YES;
+			//printf("\n");
+		}
+		else
+		{
+			// найдена буква
+			// определеление символа
+			if (c == 'a' || c == 'e' || c == 'i' || c == 'y' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'Y' || c == 'O' || c == 'U')
+				gl++; 
+			else if ((c > 'a' && c <= 'z') || (c > 'A' && c <= 'Z'))  // проверка на слово
+				sg++; 
+		    else
+				word = NO;
+			//printf("sg= %d  gl= %d\n", sg,gl);
+			flag = YES;
+		}
+		
+	}
+	printf("\nNumber of words = %d", cnt);
+	printf("\nPress any button to close the window\n");
+	_getch();
+	return 0;
+}

@@ -1,0 +1,40 @@
+#include <stdio.h> 
+#include <math.h> 
+int main(void) 
+{ 
+
+float s; // сумма ряда 
+float a; // элемент ряда 
+float x; // входной параметр ряда 
+float esp; // пороговое значение 
+int i; // номер очередного элемента ряда 
+int sgn; // знак очередного элемента 
+int goal; // cтепень икс 
+int fac; // факториал 
+
+printf("esp="); 
+scanf_s("%f", &esp); 
+printf("x="); 
+scanf_s("%f", &x); 
+
+s = 0; 
+a = x; 
+i = 1; 
+sgn = 1; 
+goal = 0; 
+fac = 2; 
+
+while (a>esp) 
+{ 
+i++; 
+s = s + a * sgn; 
+goal = i * 2 - 1; 
+fac = fac * goal; 
+a = pow(x,goal)/fac; 
+sgn = -sgn; 
+fac = fac*(goal+1); 
+} 
+
+printf("s = %f\ni = %d\n", s,i-1); 
+return 0; 
+}

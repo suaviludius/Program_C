@@ -1,0 +1,7 @@
+﻿  Source.cpp
+c:\users\v\desktop\артем\practica\practica\source.cpp(112): warning C4554: >>: проверьте порядок применения операторов на наличие ошибки; для четкого задания порядка используйте скобки
+c:\users\v\desktop\артем\practica\practica\source.cpp(193): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+c:\users\v\desktop\артем\practica\practica\source.cpp(312): warning C4244: =: преобразование "double" в "char", возможна потеря данных
+c:\users\v\desktop\артем\practica\practica\source.cpp(358): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+c:\users\v\desktop\артем\practica\practica\source.cpp(367): warning C4715: DECODLOG: значение возвращается не при всех путях выполнения
+  Practica.vcxproj -> C:\Users\V\Desktop\Артем\Practica\Debug\Practica.exe
